@@ -7,10 +7,12 @@ export class Ball{
         this.vx = speed;
         this.vy = speed;
 
-        // 스테이지에 랜덤으로 위치할 수 있게 핢수를 정의해줌.
+        // 스테이지에 랜덤으로 위치할 수 있게 함수를 정의해줌.
         const diameter = this.radius * 2;
-        this.x = diameter +(Math.random() * stageWidth - diameter);
-        this.y = diameter +(Math.random() * stageHeight - diameter);
+
+        // x,y를 반지름에서 화면사이즈 - 반지름 사이에 랜덤값으로 놓기. (원을 그릴때 반지름이 그림의 x,y 좌표가 되기 때문.)
+        this.x = this.radius +(Math.random() * stageWidth - diameter);
+        this.y = this.radius +(Math.random() * stageHeight - diameter);
     }
 
     // draw함수를 만들어서 context를 가지고 오고 스테이지 사이즈를 가져옴.
